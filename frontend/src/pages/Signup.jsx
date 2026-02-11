@@ -5,7 +5,7 @@ import api from "../api/axios";
 export default function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [errors, setErrors] = useState({});
-  const [warning, setWarning] = useState(""); // server warning
+  const [warning, setWarning] = useState(""); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function Signup() {
   return (
     <div className="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-900 to-black">
 
-      {/* Autofill styling */}
+      
       <style>{`
         input:-webkit-autofill {
           -webkit-box-shadow: 0 0 0px 1000px #1f2937 inset;

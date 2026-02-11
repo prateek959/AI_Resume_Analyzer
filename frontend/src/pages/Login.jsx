@@ -4,7 +4,7 @@ import api from "../api/axios";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
-  const [warning, setWarning] = useState(""); // warning message state
+  const [warning, setWarning] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function Login() {
   }, [navigate]);
 
   const handleLogin = async () => {
-    setWarning(""); // reset warning
+    setWarning(""); 
     if (!form.email || !form.password) {
       setWarning("Please fill in all fields.");
       return;
@@ -28,14 +28,14 @@ export default function Login() {
         err.response?.data?.msg ||
         err.response?.data?.message ||
         "Login failed";
-      setWarning(msg); // show inline warning
+      setWarning(msg); 
     }
   };
 
   return (
     <div className="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-900 to-black">
 
-      {/* Autofill styling */}
+      
       <style>{`
         input:-webkit-autofill {
           -webkit-box-shadow: 0 0 0px 1000px #1f2937 inset;
@@ -49,14 +49,14 @@ export default function Login() {
           Resume AI Login
         </h1>
 
-        {/* Warning Message */}
+    
         {warning && (
           <div className="mb-4 p-3 bg-red-700/70 text-red-100 rounded-lg text-sm">
             {warning}
           </div>
         )}
 
-        {/* Email Input */}
+        
         <div className="relative mb-6">
           <input
             type="email"
@@ -82,7 +82,7 @@ export default function Login() {
           />
         </div>
 
-        {/* Password Input */}
+       
         <div className="relative mb-8">
           <input
             type="password"
@@ -108,7 +108,7 @@ export default function Login() {
           />
         </div>
 
-        {/* Login Button */}
+       
         <button
           onClick={handleLogin}
           className="
@@ -131,7 +131,7 @@ export default function Login() {
           Login
         </button>
 
-        {/* Signup Link */}
+        
         <p className="mt-6 text-center text-gray-400">
           New user?{" "}
           <Link to="/signup" className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors duration-300">

@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// "http://localhost:3003"
 const api = axios.create({
-  baseURL: "http://localhost:3003", // backend port
+  baseURL: "https://ai-resume-analyzer-j2kz.onrender.com", 
 });
 
 // Automatically attach token
