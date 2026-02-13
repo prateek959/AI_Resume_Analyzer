@@ -14,6 +14,13 @@ app.use(cors({
     credentials:true
 }));
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    message: "server running",
+    time: new Date()
+  });
+});
 
 
 app.use('/user',authRoutes);
